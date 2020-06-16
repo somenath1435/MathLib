@@ -1,0 +1,39 @@
+name: UI-Test
+
+on:
+  pull_request:
+    branches:
+      - 'master'
+  push:
+    branches:
+      - 'master'
+
+jobs:
+
+  UItest:
+    runs-on: macos-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v2
+
+      - name: Make launch executable
+        run: chmod +x ./launch.sh
+
+      - name: Run launch script
+        run: ./launch.sh
+
+      - name: Make gradlew executable
+        run: chmod +x ./gradlew
+
+      - name: run tests
+        uses: reactivecircus/android-emulator-runner@v2
+        with:
+          api-level: 29
+          script: ./gradlew connectedCheck
+
+      - name: Make stop executable
+        run: chmod +x ./stop.sh
+
+      - name: Run stop script
+        run: chmod +x ./stop.sh
+
