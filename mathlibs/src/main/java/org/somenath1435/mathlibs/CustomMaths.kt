@@ -3,23 +3,23 @@ package org.somenath1435.mathlibs
 class CustomMaths {
     companion object {
         @JvmStatic
-        fun add(a: Int, b: Int): Int {
-            return a + b
+        fun add(x: Int, y: Int): Int {
+            return x + y
         }
 
         @JvmStatic
-        fun sub(a: Int, b: Int): Int {
-            return a - b
+        fun sub(x: Int, y: Int): Int {
+            return x - y
         }
 
         @JvmStatic
-        fun mul(a: Int, b: Int): Int {
-            return a * b
+        fun mul(x: Int, y: Int): Int {
+            return x * y
         }
 
         @JvmStatic
-        fun div(a: Int, b: Int): Int {
-            return a / b
+        fun div(x: Int, y: Int): Int {
+            return x / y
         }
     }
 }
