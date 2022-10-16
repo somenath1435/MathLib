@@ -12,6 +12,8 @@ jobs:
 
   UItest:
     runs-on: macos-latest
+    permissions:
+      pull-requests: write
     steps:
       - name: checkout
         uses: actions/checkout@v2
